@@ -23,9 +23,25 @@ header {
   margin: 0px 20px;
 }
 
-.logo {
+/*.logo {
   font-weight: bolder;
   font-size: 38px;
+  color: #5c7893;
+}*/
+.logo-wrap {
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  margin-right: 20px;
+}
+
+.logo-text {
+  font-weight: bolder;
+  font-size: 1.1rem;
   color: #5c7893;
 }
 
