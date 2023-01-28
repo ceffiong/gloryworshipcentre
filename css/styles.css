@@ -142,7 +142,7 @@ header {
 
 .about-left-img:hover,
 .slider-event-img:hover {
-  box-shadow: 10px 20px #810365;
+  box-shadow: 10px 20px #f18308;
   -webkit-transform: translateX(-4px);
   transform: translateX(-4px);
   transition: 0.5s ease;
@@ -251,7 +251,7 @@ header {
 }
 
 .slider-event-img:hover {
-  box-shadow: 10px 20px #810365;
+  box-shadow: 10px 20px #f18308;
   -webkit-transform: translateX(-4px);
   transform: translateX(-4px);
   transition: 0.5s ease;
