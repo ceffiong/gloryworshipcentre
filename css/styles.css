@@ -443,7 +443,7 @@ input[type="submit"]:hover {
   display: none;
   color: red;
   position: fixed;
-  bottom: 10px;
+  bottom: 30px;
   right: 10px;
   z-index: 5;
   font-size: 18px;
@@ -452,6 +452,17 @@ input[type="submit"]:hover {
   font-size: 48px;
 }
 
+/* Copyright section */
+.copyright {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(19, 85, 156, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  padding: 10px 0;
+}
 /* Responsive layout */
 
 /* X-Small devices (portrait phones, less than 576px) */
