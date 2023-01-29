@@ -257,6 +257,28 @@ header {
   transition: 0.5s ease;
 }
 
+.more-icon {
+  color: #5c7893;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.more-icon:hover {
+  color: #13559c;
+}
+
+#more-mission,
+#more-donate,
+#more-meet {
+  display: none;
+}
+
+#more-mission-collapse,
+#more-donate-collapse,
+#more-meet-collapse {
+  display: none;
+}
+
 /* Events section */
 .events {
   display: flex;

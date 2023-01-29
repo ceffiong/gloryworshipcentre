@@ -72,3 +72,52 @@ function initMap() {
 }
 
 window.initMap = initMap;
+
+//expand, collapse
+
+function expand(item) {
+  document.getElementById(`more-${item}`).style.display = "block";
+  document.getElementById(`more-${item}`).style.transition = "ease 0.9s";
+  document.getElementById(`more-${item}-collapse`).style.display = "block";
+  document.getElementById(`more-${item}-expand`).style.display = "none";
+}
+
+function collapse(item) {
+  document.getElementById(`more-${item}`).style.display = "none";
+  document.getElementById(`more-${item}`).style.transition = "ease 0.9s";
+  document.getElementById(`more-${item}-collapse`).style.display = "none";
+  document.getElementById(`more-${item}-expand`).style.display = "block";
+}
+
+function funcExpand(arg) {
+  switch (arg) {
+    case "mission":
+      expand(arg);
+      break;
+    case "donate":
+      expand(arg);
+      break;
+    case "meet":
+      expand(arg);
+      break;
+    default:
+      break;
+  }
+}
+
+function funcCollapse(arg) {
+  switch (arg) {
+    case "mission":
+      collapse(arg);
+      break;
+    case "donate":
+      collapse(arg);
+      break;
+    case "meet":
+      collapse(arg);
+      break;
+
+    default:
+      break;
+  }
+}
