@@ -286,7 +286,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
             <div class="contact-left">
                 <div class="contactForm">
-                    <form action="" method="get" class="contact-form">
+                    <form class="contact-form" id="contact-form">
                         <div class="contact-form-filed">
                             <label for="name">Full Name </label>
                             <input type="text" name="name" id="name" placeholder="Full Name" required>
@@ -304,9 +304,18 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                         </div>
 
                         <div class="contact-form-field">
-                            <input type="submit" value="Send Message">
+                            <input id="submit-btn" type="submit" value="Send Message">
                         </div>
+
+                        <div id="spinner"></div>
+
+                        <div id="status">Loading...</div>
+                        <div id="success">Your message has been sent!</div>
+                        <div id="failure">Something went wrong. <span>Please email: </span> <a
+                                href="mailto:contact@gloryworshipcentre.at">contact@gloryworshipcentre.at</a></div>
+
                     </form>
+
                 </div>
             </div>
             <div class="contact-right">
@@ -401,8 +410,19 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
     <i onclick="topFunction()" id="btn-top" class="fa-solid fa-circle-up"></i>
 
+    <button onclick="sendEmail()" id="send-email">Send email</button>
 
 
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+            (function () {
+                emailjs.init('WGu7JN67_FGNOf8d_');
+            })();
+    </script>
+
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"> -->
+    </script>
 
     <script src="js/script.js"></script>
     <script src="

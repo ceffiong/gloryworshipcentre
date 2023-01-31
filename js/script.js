@@ -121,3 +121,52 @@ function funcCollapse(arg) {
       break;
   }
 }
+
+//email
+window.onload = function () {
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+
+      var templateParams = {
+        name: name,
+        message: message,
+        messenger: email,
+      };
+
+      //disable btn and show spinner and loading
+      document.getElementById("submit-btn").disabled = true;
+      document.getElementById("spinner").style.display = "block";
+      document.getElementById("status").style.display = "block";
+      document.getElementById("failure").style.display = "none";
+      document.getElementById("success").style.display = "none";
+
+      // these IDs from the previous steps
+      emailjs
+        .send("gwc_contact_form_service", "template_ka1oe0e", templateParams)
+        .then(
+          function () {
+            document.getElementById("spinner").style.display = "none";
+            document.getElementById("status").style.display = "none";
+            document.getElementById("failure").style.display = "none";
+            document.getElementById("success").style.display = "block";
+
+            //reset form
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+          },
+          function (error) {
+            document.getElementById("spinner").style.display = "none";
+            document.getElementById("status").style.display = "none";
+            document.getElementById("failure").style.display = "block";
+            document.getElementById("success").style.display = "none";
+          }
+        );
+    });
+};
