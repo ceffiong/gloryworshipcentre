@@ -217,6 +217,7 @@ header {
   align-items: center;
   max-width: 440px;
   margin-bottom: 40px;
+  padding: 0px 14px;
 }
 
 .church-fav {
