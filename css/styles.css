@@ -422,7 +422,6 @@ input[type="submit"]:hover {
 .about-content > a {
   text-decoration: none;
   color: #5c7893;
-  font-weight: bold;
 }
 
 #map {
