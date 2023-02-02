@@ -122,8 +122,57 @@ function funcCollapse(arg) {
   }
 }
 
-//email
+const emailTemplate = (name, message, email) => {
+  return `<h2>
+  Hi Pastor David,
+  </h2>
+  <p>
+  You have a new message from ${name}, <a href="mailto:${email}">${email}</a>
+  </p>
+  <div style="padding-left: 10px; border-left: 8px solid #d9d9d9">
+  <q>${message}</q>
+  </div>
+  <p>
+  Blessings, <br/>
+  <a href="https://gloryworshipcentre.at">www.gloryworshipcentre.at</a>
+  </p>`;
+};
+
+// send email
 window.onload = function () {
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+
+      const data = {
+        replyTo: email,
+        message: emailTemplate(name, message, email),
+      };
+
+      fetch("https://4tm9ptvl3f.execute-api.eu-west-1.amazonaws.com/beta", {
+        method: "POST",
+        body: data,
+      })
+        .then((response) => {
+          console.log(response.json);
+        })
+        .then((data) => {
+          console.log("Success:", data);
+        })
+        .catch((error) => {
+          console.log("Error - something went wrong");
+          console.log("Error:", error);
+        });
+    });
+};
+
+//emailjs
+const sendEmail = () => {
   document
     .getElementById("contact-form")
     .addEventListener("submit", function (event) {
