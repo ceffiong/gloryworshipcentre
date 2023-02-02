@@ -129,7 +129,7 @@ const emailTemplate = (name, message, email) => {
   <p>
   You have a new message from ${name}, <a href="mailto:${email}">${email}</a>
   </p>
-  <div style="padding-left: 10px; border-left: 8px solid #d9d9d9">
+  <div style="padding-left: 10px; border-left: 8px solid #d9d9d9; margin-bottom: 20px;">
   <q>${message}</q>
   </div>
   <p>
@@ -149,45 +149,6 @@ window.onload = function () {
       var email = document.getElementById("email").value;
       var message = document.getElementById("message").value;
 
-      const data = {
-        replyTo: email,
-        message: emailTemplate(name, message, email),
-      };
-
-      fetch("https://4tm9ptvl3f.execute-api.eu-west-1.amazonaws.com/beta", {
-        method: "POST",
-        body: data,
-      })
-        .then((response) => {
-          console.log(response.json);
-        })
-        .then((data) => {
-          console.log("Success:", data);
-        })
-        .catch((error) => {
-          console.log("Error - something went wrong");
-          console.log("Error:", error);
-        });
-    });
-};
-
-//emailjs
-const sendEmail = () => {
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      var name = document.getElementById("name").value;
-      var email = document.getElementById("email").value;
-      var message = document.getElementById("message").value;
-
-      var templateParams = {
-        name: name,
-        message: message,
-        messenger: email,
-      };
-
       //disable btn and show spinner and loading
       document.getElementById("submit-btn").disabled = true;
       document.getElementById("spinner").style.display = "block";
@@ -195,27 +156,35 @@ const sendEmail = () => {
       document.getElementById("failure").style.display = "none";
       document.getElementById("success").style.display = "none";
 
-      // these IDs from the previous steps
-      emailjs
-        .send("gwc_contact_form_service", "template_ka1oe0e", templateParams)
-        .then(
-          function () {
-            document.getElementById("spinner").style.display = "none";
-            document.getElementById("status").style.display = "none";
-            document.getElementById("failure").style.display = "none";
-            document.getElementById("success").style.display = "block";
+      const data = {
+        replyTo: email,
+        message: emailTemplate(name, message, email),
+      };
 
-            //reset form
-            document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("message").value = "";
-          },
-          function (error) {
-            document.getElementById("spinner").style.display = "none";
-            document.getElementById("status").style.display = "none";
-            document.getElementById("failure").style.display = "block";
-            document.getElementById("success").style.display = "none";
-          }
-        );
+      fetch(" https://4yxdyim70d.execute-api.eu-west-1.amazonaws.com/demo", {
+        method: "POST",
+        body: JSON.stringify(data),
+      })
+        .then((response) => {
+          console.log("I AM HERE");
+          console.log(response.json);
+        })
+        .then((data) => {
+          document.getElementById("spinner").style.display = "none";
+          document.getElementById("status").style.display = "none";
+          document.getElementById("failure").style.display = "none";
+          document.getElementById("success").style.display = "block";
+
+          //reset form
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("message").value = "";
+        })
+        .catch((error) => {
+          document.getElementById("spinner").style.display = "none";
+          document.getElementById("status").style.display = "none";
+          document.getElementById("failure").style.display = "block";
+          document.getElementById("success").style.display = "none";
+        });
     });
 };
