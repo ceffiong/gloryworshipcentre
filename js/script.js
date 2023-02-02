@@ -166,19 +166,24 @@ window.onload = function () {
         body: JSON.stringify(data),
       })
         .then((response) => {
-          console.log("I AM HERE");
-          console.log(response.json);
-        })
-        .then((data) => {
-          document.getElementById("spinner").style.display = "none";
-          document.getElementById("status").style.display = "none";
-          document.getElementById("failure").style.display = "none";
-          document.getElementById("success").style.display = "block";
+          response.json().then((data) => {
+            if (data.status === "Success") {
+              document.getElementById("spinner").style.display = "none";
+              document.getElementById("status").style.display = "none";
+              document.getElementById("failure").style.display = "none";
+              document.getElementById("success").style.display = "block";
 
-          //reset form
-          document.getElementById("name").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("message").value = "";
+              //reset form
+              document.getElementById("name").value = "";
+              document.getElementById("email").value = "";
+              document.getElementById("message").value = "";
+            } else {
+              document.getElementById("spinner").style.display = "none";
+              document.getElementById("status").style.display = "none";
+              document.getElementById("failure").style.display = "block";
+              document.getElementById("success").style.display = "none";
+            }
+          });
         })
         .catch((error) => {
           document.getElementById("spinner").style.display = "none";
