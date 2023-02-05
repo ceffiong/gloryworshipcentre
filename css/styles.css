@@ -270,13 +270,15 @@ header {
 
 #more-mission,
 #more-donate,
-#more-meet {
+#more-meet,
+#more-testify {
   display: none;
 }
 
 #more-mission-collapse,
 #more-donate-collapse,
-#more-meet-collapse {
+#more-meet-collapse,
+#more-testify-collapse {
   display: none;
 }
 

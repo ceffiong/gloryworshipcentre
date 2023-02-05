@@ -100,6 +100,9 @@ function funcExpand(arg) {
     case "meet":
       expand(arg);
       break;
+    case "testify":
+      expand(arg);
+      break;
     default:
       break;
   }
@@ -114,6 +117,9 @@ function funcCollapse(arg) {
       collapse(arg);
       break;
     case "meet":
+      collapse(arg);
+      break;
+    case "testify":
       collapse(arg);
       break;
 
