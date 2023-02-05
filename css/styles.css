@@ -138,9 +138,17 @@ header {
   height: auto;
   transition: 0.5s ease;
   cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 10px 20px #f18308;
 }
 
-.about-left-img:hover,
+.about-left-img:hover {
+  box-shadow: -10px -20px #f18308;
+  -webkit-transform: translateX(4px);
+  transform: translateX(4px);
+  transition: 0.5s ease;
+}
+
 .slider-event-img:hover {
   box-shadow: 10px 20px #f18308;
   -webkit-transform: translateX(-4px);
