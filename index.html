@@ -39,7 +39,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 </head>
 
 <body>
-    <header>
+    <header id="header-desktop">
         <div class="logo-wrap">
             <img class="logo" src="img/gwc_logo.png" alt="Church Logo" /> <span class="logo-text">Glory Worship
                 Centre</span>
@@ -47,17 +47,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
 
         <i class="nav-btn fa-solid fa-bars fa-2x" onclick="openNav()"></i>
-
-        <nav class="mobile-nav" id="mobile-nav">
-            <a href="javascript:void(0)" class="mobile-nav-close-btn" onclick="closeNav()">&times;</a>
-            <ul class="mobile-nav-ul">
-                <li class="mobile-nav-item" onclick="closeNav()"> <a href="#home">Home</a></li>
-                <li class="mobile-nav-item" onclick="closeNav()"> <a href="#about">About</a> </li>
-                <li class="mobile-nav-item" onclick="closeNav()"> <a href="#event">Events</a> </li>
-                <li class="mobile-nav-item" onclick="closeNav()"> <a href="#contact">Contact</a> </li>
-            </ul>
-
-        </nav>
 
         <nav class="desktop-nav">
             <ul class="desktop-nav-ul">
@@ -70,6 +59,21 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         </nav>
 
     </header>
+
+    <header id="header-mobile">
+
+        <nav class="mobile-nav" id="mobile-nav">
+            <a href="javascript:void(0)" class="mobile-nav-close-btn" onclick="closeNav()">&times;</a>
+            <ul class="mobile-nav-ul">
+                <li class="mobile-nav-item" onclick="closeNav()"> <a href="#home">Home</a></li>
+                <li class="mobile-nav-item" onclick="closeNav()"> <a href="#about">About</a> </li>
+                <li class="mobile-nav-item" onclick="closeNav()"> <a href="#event">Events</a> </li>
+                <li class="mobile-nav-item" onclick="closeNav()"> <a href="#contact">Contact</a> </li>
+            </ul>
+
+        </nav>
+    </header>
+
 
     <section id="home" class="home splide" aria-label="Splide Basic HTML Example">
 
@@ -356,7 +360,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 </p>
 
                 <div class="contact-subhero">
-                    <i class="fa-solid fa-phone"></i> Email
+                    <i class="fa-regular fa-envelope"></i> Email
                 </div>
                 <p class="about-content">
                     <a href="mailto:contact@gloryworshipcentre.at">contact@gloryworshipcentre.at</a>
