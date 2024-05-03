@@ -1,0 +1,130 @@
+.church {
+  background-color: #f9f9f9;
+}
+
+.church-content {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 100px;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0px;
+  text-align: center;
+  width: 90%;
+  margin: 0px auto;
+}
+
+.hline,
+.vline {
+  display: none;
+}
+.church-fav {
+  display: block;
+  color: #5c7893;
+}
+
+.church-hero {
+  font-size: 20px;
+  margin-top: 16px;
+}
+
+.church-text {
+  color: #838383;
+  font-size: 1rem;
+  margin: 20px auto;
+}
+
+.more-icon {
+  color: #5c7893;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.more-icon:hover {
+  color: #13559c;
+}
+
+#more-mission,
+#more-donate,
+#more-meet,
+#more-testify {
+  display: none;
+}
+
+#more-mission-collapse,
+#more-donate-collapse,
+#more-meet-collapse,
+#more-testify-collapse {
+  display: none;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .church-content {
+    width: 70%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .church-content {
+    width: 90%;
+    gap: 0;
+    grid-template-columns: 50% auto auto;
+    grid-template-rows: 50% auto auto;
+  }
+
+  .hline,
+  .vline {
+    display: block;
+  }
+
+  .church-content > aside {
+    padding: 25px;
+  }
+
+  .church-item {
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .vline {
+    border-left: 1px solid #dadada;
+    height: 100%;
+  }
+
+  .hline {
+    border-bottom: 1px solid #dadada;
+  }
+
+  .church-text {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .church-content {
+    width: 80%;
+  }
+
+  .church-content > aside {
+    padding: 50px;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .church-content {
+    width: 70%;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .church-content {
+    width: 60%;
+  }
+}

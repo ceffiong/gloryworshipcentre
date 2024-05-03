@@ -1,0 +1,37 @@
+.event {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 14px 60px 14px;
+}
+
+.event-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.event-top {
+  text-align: center;
+}
+
+.event-top > .about-hero {
+  margin-top: 0px;
+}
+
+.event-line1 {
+  border: 0;
+  border-top: 2px solid #810365;
+  max-width: 100px;
+}
+
+.event-line2 {
+  border: 0;
+  border-top: 2px solid #810365;
+  max-width: 80px;
+  margin-bottom: 40px;
+}
+
+.event-slide-content > .about-subhero {
+  color: #5c7893;
+  margin-top: 30px;
+}
